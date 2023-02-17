@@ -95,6 +95,14 @@ dotenv = ["python-dotenv (>=0.10.4)"]
 email = ["email-validator (>=1.0.3)"]
 
 [[package]]
+name = "python-decouple"
+version = "3.7"
+description = "Strict separation of settings from code."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "python-dotenv"
 version = "0.21.1"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -201,7 +209,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0085ddb67c9bdee9f009676d938ba915a57a075f85dc7b3ffc1787e90e9f85bb"
+content-hash = "c9fbeab87580913ecbeea29ef36ae4c36153aeb76717a41143cc9fce48662ff0"
 
 [metadata.files]
 anyio = []
@@ -212,6 +220,7 @@ h11 = []
 httptools = []
 idna = []
 pydantic = []
+python-decouple = []
 python-dotenv = []
 pyyaml = []
 sniffio = []

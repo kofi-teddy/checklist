@@ -8,6 +8,7 @@ authors = ["kofi-teddy <agudogot@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.92.0"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
+python-decouple = "^3.7"
 
 [tool.poetry.dev-dependencies]
 
