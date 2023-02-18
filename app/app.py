@@ -2,6 +2,7 @@ from beanie import init_beanie
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
 
+from app.api.api_v1.router import router
 from app.core.config import settings
 from app.models.user_models import User
 
@@ -33,3 +34,5 @@ async def app_init():
             User
         ]
     )
+
+app.include_router(router, prefix=settings.API_V1_STR)
