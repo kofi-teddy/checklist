@@ -1,6 +1,7 @@
-from app.schemas.user_schema import UserAuth
-from app.models.user_model import User
 from app.core.security import get_password
+from app.models.user_model import User
+from app.schemas.user_schema import UserAuth
+
 
 class UserService:
     @staticmethod
