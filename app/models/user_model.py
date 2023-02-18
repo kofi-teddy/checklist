@@ -20,6 +20,7 @@ class User(Document):
     def __str__(self) -> str:
         return self.email
     
+    
     def __eq__(self, other: object) -> bool:
         if isinstance(other, User):
             return self.email == other.email
