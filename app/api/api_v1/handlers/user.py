@@ -2,8 +2,9 @@ from fastapi import APIRouter
 
 user_router = APIRouter()
 
-@user_router.get('test')
-async def test():
-    return {
-        "message": "user router working"
-    }
+@user_router.post('/create', summary="create new user")
+async def create_user(data):
+    # return {
+    #     "message": "user router working"
+    # }
+    pass
