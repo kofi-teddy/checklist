@@ -1,6 +1,7 @@
 from datetime import datetime
-from uuid import UUID, uuid4
 from typing import Optional
+from uuid import UUID, uuid4
+
 from beanie import Document, Indexed
 from pydantic import EmailStr, Field
 
@@ -19,7 +20,6 @@ class User(Document):
     
     def __str__(self) -> str:
         return self.email
-    
     
     def __eq__(self, other: object) -> bool:
         if isinstance(other, User):
