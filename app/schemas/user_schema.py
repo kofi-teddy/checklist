@@ -12,6 +12,7 @@ class UserAuth(BaseModel):
 
 class UserOut(BaseModel):
     user_id: str
+    email: EmailStr
     username: str
     first_name: Optional[str]
     last_name: Optional[str]

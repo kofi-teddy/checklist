@@ -7,13 +7,14 @@ from pydantic import EmailStr, Field
 
 
 class User(Document):
-    user_id: str = Field(default_factory=lambda: uuid4().hex)
-    username: str = Indexed(str, unique=True)
+    # _id: UUID = uuid4().hex
+    user_id: str = uuid4().hex
+    username: Indexed(str, unique=True)
     email: Indexed(EmailStr, unique=True)
     hashed_password: str
-    first_name: Optional[str]
-    last_name: Optional[str]
-    disabled: Optional[bool]
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    disabled: Optional[bool] = False
 
     def __repr__(self) -> str:
         return f"User {self.email}"
