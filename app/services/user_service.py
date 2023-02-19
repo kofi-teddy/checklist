@@ -10,17 +10,16 @@ from app.schemas.user_schema import UserAuth
 class UserService:
     @staticmethod
     async def create_user(user: UserAuth):
-        user = await User.find_one({"username": user.username}) or  User.find_one({"email": user.email})
-        if user:
-            # raise HTTPException(
-            #     status_code=status.HTTP_400_BAD_REQUEST, 
-            #     detail="User with this username or email already exists")
-            # raise CustomHTTPException(status_code=400, detail="Bad Request", additional_data={"field": "value"})
-            # raise CustomHTTPException(status_code=404, detail="User not found", additional_data={"user_id": "1234"})
-            # raise CustomHTTPException(status_code=400, detail="User already exists", additional_data={"user_id": "1234"})
+        if await User.find_one({"username": user.username}):
             return JSONResponse({
                 "status": False,
-                "message": "User with this username or email already exists"
+                "message": "User with this username already exists"
+            }, status_code=status.HTTP_400_BAD_REQUEST)
+        
+        if await User.find_one({"email": user.email}):
+            return JSONResponse({
+                "status": False,
+                "message": "User with this email already exists"
             }, status_code=status.HTTP_400_BAD_REQUEST)
 
         user_in = User(
