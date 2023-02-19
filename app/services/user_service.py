@@ -1,7 +1,8 @@
+from typing import Optional
 from fastapi import HTTPException, status
 from fastapi.responses import JSONResponse
 
-from app.core.security import get_password
+from app.core.security import get_password, verify_password
 from app.core.utils import CustomHTTPException
 from app.models.user_model import User
 from app.schemas.user_schema import UserAuth
@@ -29,3 +30,17 @@ class UserService:
         )
         await user_in.save()
         return user_in
+    
+    @staticmethod
+    async def authenticate(email: str, password: str) -> Optional[User]:
+        user = await UserService.get_user_by_email(email=email)
+        if not user:
+            return user
+        
+        if not verify_password(password=password, hashed_pass=user.hashed_password):
+            return None
+        
+    @staticmethod
+    async def get_user_by_email(email: str) -> Optional[User]:
+        user = await User.find_one(email==email)
+        return user
