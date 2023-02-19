@@ -15,6 +15,7 @@ pydantic = "^1.10.5"
 pymongo = "^4.3.3"
 python-jose = "^3.3.0"
 cryptography = "^39.0.1"
+python-multipart = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 

@@ -289,6 +289,17 @@ pycrypto = ["pycrypto (>=2.6.0,<2.7.0)", "pyasn1"]
 pycryptodome = ["pycryptodome (>=3.3.1,<4.0.0)", "pyasn1"]
 
 [[package]]
+name = "python-multipart"
+version = "0.0.5"
+description = "A streaming multipart parser for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = ">=1.4.0"
+
+[[package]]
 name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
@@ -411,7 +422,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c01c67c6d0487e7f3500d09ad8a4a7e6cdf833ccec7ac6a0eb80ddb721fe5c47"
+content-hash = "604d646b11ee18fc190663f3c887a34c67e231eef352e152f5a8882d82d1e903"
 
 [metadata.files]
 anyio = []
@@ -439,6 +450,7 @@ pymongo = []
 python-decouple = []
 python-dotenv = []
 python-jose = []
+python-multipart = []
 pyyaml = []
 rsa = []
 six = [
